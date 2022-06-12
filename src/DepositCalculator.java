@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class DepositCalculator {
 
     double calculateComplexPercent(double sumOfAmount, double yearRate, int depositPeriod) {
+        // переменную sumOfAmount можно назвать просто amount - здесь нет суммы
         double pay = sumOfAmount * Math.pow((1 + yearRate / 12), 12 * depositPeriod);
 
-        return roundNumber(pay, 2);
+        return roundNumber(pay, 2); // перед return вроде не надо ставить пустую строку
     }
 
     double calculateSimplePercent(double sumOfAmount, double yearRate, int depositPeriod) {
@@ -20,7 +21,7 @@ public class DepositCalculator {
         return Math.round(value * scale) / scale;
     }
 
-    void getFinalDepositAmount() {
+    void getFinalDepositAmount() { // мне кажется, что название get.. не подходит, потому что метод ничего не возвращает
         int period;
         int action;
         double finalSumDeposit = 0;
